@@ -170,12 +170,6 @@ button {
     filter: none;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-      background-color: lightgray; /* Cambia el fondo en dispositivos móviles */
-    }
-}
-
 .container-buttons {
     display: flex;
     flex-direction: column;
