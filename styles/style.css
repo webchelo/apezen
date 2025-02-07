@@ -1,0 +1,169 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: "Oxanium", serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+.container-actives {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+button {
+    height: 2rem;
+}
+
+.container-tree img {
+    width: 20rem;
+}
+
+.container-ape img {
+    width: 20rem;
+}
+
+progress {
+    margin-top: 1rem;
+    height: 3rem;
+    width: 12rem;
+}
+
+#eye {
+    width: 5rem;
+    border-radius: 5%;
+    border: 2px solid white;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#banana {
+    width: 5rem;
+    border-radius: 5%;
+    border: 2px solid white;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#bananas-counter {
+    font-weight: bold;
+    font-size: 3rem;
+    animation: rainbow 5s infinite;
+}
+
+/* Definir la animación arcoiris */
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; } /* Vuelve al rojo para crear un ciclo continuo */
+}
+
+.container-skills {
+    display: flex;
+}
+
+.skill-icon a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 2rem;
+    cursor: pointer;
+}
+
+.skill-icon img {
+    width: 4rem;
+    border-radius: 100%;
+}
+
+button {
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: .5rem;
+    padding: 1rem;
+    line-height: 10%;
+    margin: 1rem .4rem;
+    cursor: pointer;
+}
+
+.bananas-title {
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Estilo básico para el modal */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed; /* Fija el modal respecto al viewport */
+    top: 50%; /* Posiciona el modal en el 50% de la altura de la ventana */
+    left: 50%; /* Posiciona el modal en el 50% de la anchura de la ventana */
+    transform: translate(-50%, -50%); /* Desplaza el modal para centrarlo exactamente */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo oscuro con algo de transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 30rem; /* Ajusta el tamaño del modal según lo desees */
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación para el modal */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Estilo para el ícono de cierre (SVG) */
+#close-modal-icon {
+    position: absolute; /* Posición absoluta dentro del modal */
+    top: 10px; /* Espaciado desde la parte superior */
+    right: 10px; /* Espaciado desde la derecha */
+    width: 30px; /* Tamaño pequeño */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Animación para el ícono de cierre */
+#close-modal-icon:hover {
+    transform: scale(1.2);
+}
+
+.footer {
+    padding: 1rem;
+    background-color: blueviolet;
+    color: white;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    }
+    50% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 1)) drop-shadow(0 0 15px rgba(255, 255, 255, 1));
+    }
+    100% {
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 5px rgba(255, 255, 255, 0.6));
+    }
+}
+
+#eye {
+    animation: glow 1.5s ease-in-out infinite;
+    transition: filter 0.3s ease;
+}
+
+#eye.stop-glow {
+    animation: none;
+    filter: none;
+}

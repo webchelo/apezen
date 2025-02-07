@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApeZen</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container-actives">
+        <div class="container-tree">
+            <h2 style="margin-bottom: 1rem;">Lvl <span id="tree-lvl">1</span></h2>
+            <div><img src="img/tree.jpg" alt="Un arbol de bananas" id="tree"></div>
+            <progress id="progress-bananas" value="0" max="100">  </progress>
+            <div><a onclick="getBananas()"><img src="img/banana.jpg" alt="bananas violetas" id="banana"></a></div>
+        </div>
+        <div class="container-ape">
+            <h2 style="margin-bottom: 1rem;">Lvl <span id="ape-lvl">1</span></h2>
+            <div><img src="img/ape.jpg" alt="Un mono meditando" id="ape"></div>
+            <progress id="progress-meditation" value="0" max="100"> </progress>
+            <div><a onclick="meditar()"><img src="img/eye.jpg" alt="ojo zen" id="eye"></a></div>
+        </div>
+        <div class="container-options">
+            <h2 class="bananas-title">Bananas</h2>
+            <p id="bananas-counter">0</p>
+            <hr>
+            <button onclick="openModal()">Statistics</button>
+            <button onclick="levelUpTree()">Upgrade Tree | Cost: <span id="tree-cost"></span></button>
+            <button onclick="levelUpApe()">Upgrade Ape | Cost: <span id="ape-cost"></span></button>
+            <hr>
+            <h2 style="margin-top: 1rem;">Mysterious Skills</h2>
+
+            <div class="container-skills">
+                <div>
+                    <div class="skill-icon"><a onclick="turboBanana()"><img src="img/turbo-banana.jpg" alt="">Turbo Banana</a></div>
+                    <div class="skill-icon"><a onclick="thirdEye()"><img src="img/third-eye.jpg" alt="">Third Eye</a></div>
+                    <div class="skill-icon"><a onclick="ultraEgo()"><img src="img/ultra-ego.jpg" alt="">Ultra Ego</a></div>
+                </div>
+                <div>
+                    <div class="skill-icon"><a onclick="doubleMind()"><img src="img/double-mind.jpg" alt="">Double Mind</a></div>
+                    <div class="skill-icon"><a onclick="megaGrow()"><img src="img/mega-grow.jpg" alt="">Mega Grow</a></div>
+                    <div class="skill-icon"><a onclick="meditationPlus()"><img src="img/meditation-plus.jpg" alt="">Meditation Plus</a></div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <p>ApeZen por Webchelo</p>
+    </div>
+    <div class="modal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" id="close-modal-icon">
+            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+        </svg>
+        <h2>Stats</h2>
+        <p>Bananas: <span id="stat-bananas"></span></p>
+        <p>Bananas per second: <span id="stat-bananas-ps"></span></p>
+        <p>Bananas per harvest: <span id="stat-bananas-pc"></span></p>
+        <p>Meditation speed: <span id="stat-meditation-speed"></span></p>
+        <p>Bananas grow: <span id="stat-banana-grow"></span></p>
+    </div>
+    <div style="margin: 1rem;">
+        <h2 style="margin-top: 1rem; color: crimson ;">Ayuda (spoilers del juego)</h2>
+        <button onclick="cheat()">Cheat de bananas para probar</button>
+        <p>Turbo Banana multiplica la ganancia de recolectar bananas del árbol</p>
+        <p>Third Eye genera bananas por segundo</p>
+        <p>Double Mind evita que pierdas muchos puntos de meditación</p>
+        <p>Ultra Ego aumenta significativamente la velocidad de meditación</p>
+        <p>Mega Grow aumenta la velocidad de crecimiento del árbol</p>
+        <p>Meditation Plus suma bananas multiplicando las bananas por segundo</p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
