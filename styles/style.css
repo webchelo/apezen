@@ -175,3 +175,15 @@ button {
       background-color: lightgray; /* Cambia el fondo en dispositivos móviles */
     }
 }
+
+.container-buttons {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-buttons button {
+    min-width: 20rem;
+    width: fit-content;
+}

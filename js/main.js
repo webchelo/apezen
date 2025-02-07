@@ -22,6 +22,7 @@ let meditationPlusDesc = document.querySelector('#meditation-plus-desc')
 
 function updateBananas() {
     bananasCounter.textContent = bananas.toLocaleString("es-ES");
+    checkBananas()
 }
 
 function restartMeditation() {
@@ -257,3 +258,11 @@ const closeModal = () => {
 // Asignar la función de cierre al ícono del SVG
 closeModalIcon.addEventListener('click', closeModal);
 
+function checkBananas() {
+    if (bananas > 1000000000000000) {
+        bananasCounter.style.fontSize = "1rem";
+        bananasCounter.style.marginBottom = "1rem";
+    } else {
+        bananasCounter.style.fontSize = "3rem"; // Tamaño original
+    }
+}
