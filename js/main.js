@@ -1,7 +1,7 @@
 let bananas = 0;
-let bananasPC = 1;
+let bananasPC = 10;
 let bananasPS = 0;
-let meditationSpeed = 1;
+let meditationSpeed = 2;
 let meditationSubstract = 4000;
 let turboBananaCount = 5;
 let thirdEyeCount = 1;
@@ -156,7 +156,7 @@ let treeCost = document.querySelector('#tree-cost')
 let apeCost = document.querySelector('#ape-cost')
 
 let treeLevel = 1; // Nivel inicial del árbol
-let baseTreeCost = 500; // Costo base para subir de nivel
+let baseTreeCost = 5000; // Costo base para subir de nivel
 treeCost.textContent = baseTreeCost;
 let treeCostMultiplier = 2; // Multiplicador del costo
 
@@ -189,7 +189,7 @@ const levelUpTree = () => {
 
 
 let apeLevel = 1; // Nivel inicial del mono
-let baseApeCost = 500; // Costo base para subir de nivel
+let baseApeCost = 5000; // Costo base para subir de nivel
 apeCost.textContent = baseApeCost;
 let apeCostMultiplier = 2; // Multiplicador del costo
 
