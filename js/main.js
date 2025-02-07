@@ -73,6 +73,7 @@ setInterval(() => {
 setInterval(() => {
     bananas = bananas + bananasPS
     updateBananas()
+    updateMeditation();
 }, 1000);
 
 const updateMeditation = () => {
