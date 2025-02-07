@@ -4,15 +4,24 @@ let bananasPS = 0;
 let meditationSpeed = 2;
 let meditationSubstract = 4000;
 let turboBananaCount = 5;
-let thirdEyeCount = 1;
+let thirdEyeCount = 10;
 let ultraEgoCount = 5;
 let bananaGrow = 10;
 let meditationPlusPercent = 2
 
 let bananasCounter = document.querySelector('#bananas-counter')
 
+let turboBananaDesc = document.querySelector('#turbo-banana-desc')
+let thirdEyeDesc = document.querySelector('#third-eye-desc')
+let ultraEgoDesc = document.querySelector('#ultra-ego-desc')
+let doubleMindDesc = document.querySelector('#double-mind-desc')
+let megaGrowDesc = document.querySelector('#mega-grow-desc')
+let meditationPlusDesc = document.querySelector('#meditation-plus-desc')
+
+
+
 function updateBananas() {
-    bananasCounter.textContent = bananas 
+    bananasCounter.textContent = bananas.toLocaleString("es-ES");
 }
 
 function restartMeditation() {
@@ -54,7 +63,7 @@ setInterval(() => {
     if (progressBananas.value == 100) {
         bananaIconTrigger();
     }
-}, 5000);
+}, 4000);
 
 setInterval(() => {
     progressMeditation.value = progressMeditation.value - 5
@@ -111,6 +120,7 @@ const meditar = () => {
 
 const turboBanana = () => {
     if(progressMeditation.value >= 90) {
+        turboBananaDesc.innerText = 'x2 tree harvest'
         bananasPC = bananasPC * turboBananaCount;
         restartMeditation()
     }
@@ -118,6 +128,7 @@ const turboBanana = () => {
 
 const thirdEye = () => {
     if(progressMeditation.value >= 90) {
+        thirdEyeDesc.innerText = 'More bananas p/s'
         bananasPS = bananasPS + thirdEyeCount;
         restartMeditation()
     }
@@ -125,6 +136,7 @@ const thirdEye = () => {
 
 const ultraEgo = () => {
     if(progressMeditation.value >= 90) {
+        ultraEgoDesc.innerText = 'Increase meditation'
         meditationSpeed = meditationSpeed + ultraEgoCount;
         restartMeditation()
     }
@@ -132,6 +144,7 @@ const ultraEgo = () => {
 
 const doubleMind = () => {
     if(progressMeditation.value >= 90) {
+        doubleMindDesc.innerText = 'Less meditation stress'
         meditationSubstract + 400
         restartMeditation()
     }
@@ -139,6 +152,7 @@ const doubleMind = () => {
 
 const megaGrow = () => {
     if(progressMeditation.value >= 90) {
+        megaGrowDesc.innerText = 'Increase tree speed'
         bananaGrow + 10;
         restartMeditation()
     }
@@ -146,7 +160,8 @@ const megaGrow = () => {
 
 const meditationPlus = () => {
     if(progressMeditation.value >= 90) {
-        bananas += bananasPC * meditationPlusPercent;
+        meditationPlusDesc.innerText = 'Banana bonification'
+        bananas += (bananasPC * meditationPlusPercent) / 2;
         updateBananas();
         restartMeditation();
     }
@@ -241,3 +256,4 @@ const closeModal = () => {
 }
 // Asignar la función de cierre al ícono del SVG
 closeModalIcon.addEventListener('click', closeModal);
+
