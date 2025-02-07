@@ -1,5 +1,5 @@
 let bananas = 0;
-let bananasPC = 10;
+let bananasPC = 100;
 let bananasPS = 0;
 let meditationSpeed = 2;
 let meditationSubstract = 4000;
@@ -54,7 +54,7 @@ setInterval(() => {
     if (progressBananas.value == 100) {
         bananaIconTrigger();
     }
-}, 500);
+}, 5000);
 
 setInterval(() => {
     progressMeditation.value = progressMeditation.value - 5
@@ -85,8 +85,10 @@ const updateMeditation = () => {
             icon.style.opacity = '.2';
         });
     } else {
-        apeImg.style.filter = 'saturate(100%)';        
+        apeImg.style.filter = 'saturate(100%)'; 
+        apeImg.style.filter = 'drop-shadow(5px 5px 10px white)'       
         apeImg.style.opacity = '100%';
+        
         skillIcons.forEach(icon => {
             icon.style.opacity = '1';
         });
@@ -239,15 +241,3 @@ const closeModal = () => {
 }
 // Asignar la función de cierre al ícono del SVG
 closeModalIcon.addEventListener('click', closeModal);
-
-let statBananas = document.querySelector('#stat-bananas')
-let statBananasPS = document.querySelector('#stat-bananas-ps')
-let statBananasPC = document.querySelector('#stat-bananas-pc')
-let statMeditationSpeed = document.querySelector('#stat-meditation-speed')
-let statBananaGrow = document.querySelector('#stat-banana-grow')
-
-statBananas.textContent = bananas;
-statBananasPS.textContent = bananasPS;
-statBananasPC.textContent = bananasPC;
-statMeditationSpeed.textContent = meditationSpeed;
-statBananaGrow.textContent = bananaGrow;
