@@ -168,7 +168,7 @@ const meditationPlus = () => {
 }
 
 let lvlTree = document.querySelector('#tree-lvl')
-let lvlApe = document.querySelector('#tree-ape')
+let lvlApe = document.querySelector('#ape-lvl')
 let treeCost = document.querySelector('#tree-cost')
 let apeCost = document.querySelector('#ape-cost')
 
