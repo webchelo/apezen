@@ -68,6 +68,8 @@ progress {
 
 .container-skills {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .skill-icon a{
@@ -166,4 +168,10 @@ button {
 #eye.stop-glow {
     animation: none;
     filter: none;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+      background-color: lightgray; /* Cambia el fondo en dispositivos móviles */
+    }
 }
