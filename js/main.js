@@ -19,12 +19,17 @@ let megaGrowDesc = document.querySelector('#mega-grow-desc')
 let meditationPlusDesc = document.querySelector('#meditation-plus-desc')
 
 
-
+/**
+ *  Contador de bananas
+ */
 function updateBananas() {
     bananasCounter.textContent = bananas.toLocaleString("es-ES");
     checkBananas()
 }
 
+/**
+ *  Resetea la meditación a la mitad
+ */
 function restartMeditation() {
     progressMeditation.value = 50;
     updateMeditation();
@@ -58,6 +63,7 @@ function bananaIconRestart() {
     bananaIcon.style.opacity = '.5';
 }
 
+// Crecimiento del arbol
 setInterval(() => {
     bananaIconRestart()
     progressBananas.value = progressBananas.value + bananaGrow
@@ -66,16 +72,21 @@ setInterval(() => {
     }
 }, 4000);
 
+// Decrecimiento de la meditación
 setInterval(() => {
     progressMeditation.value = progressMeditation.value - 5
 }, meditationSubstract);
 
+// Bananas por segundo
 setInterval(() => {
     bananas = bananas + bananasPS
     updateBananas()
     updateMeditation();
 }, 1000);
 
+/**
+ *  Modifica el aspecto del mono segun el progreso
+ */
 const updateMeditation = () => {
     if (progressMeditation.value === 0) {
         apeImg.style.filter = 'saturate(0%)';
@@ -107,6 +118,9 @@ const updateMeditation = () => {
 }
 updateMeditation();
 
+/**
+ *  Hacer click en la banana
+ */
 const getBananas = () => {
     if(progressBananas.value == 100) {
         progressBananas.value = 0;
@@ -115,11 +129,17 @@ const getBananas = () => {
     }
 }
 
+/**
+ *  Hacer click en ojo
+ */
 const meditar = () => {
     progressMeditation.value = progressMeditation.value + meditationSpeed;
     updateMeditation();
 }
 
+/**
+ *  Skill bananas x 2
+ */
 const turboBanana = () => {
     if(progressMeditation.value >= 90) {
         turboBananaDesc.innerText = 'x2 tree harvest'
@@ -128,6 +148,9 @@ const turboBanana = () => {
     }
 }
 
+/**
+ *  Skill bananas por segundo
+ */
 const thirdEye = () => {
     if(progressMeditation.value >= 90) {
         thirdEyeDesc.innerText = 'More bananas p/s'
@@ -136,6 +159,9 @@ const thirdEye = () => {
     }
 }
 
+/**
+ *  Skill meditacion mas rapida
+ */
 const ultraEgo = () => {
     if(progressMeditation.value >= 90) {
         ultraEgoDesc.innerText = 'Increase meditation'
@@ -144,6 +170,9 @@ const ultraEgo = () => {
     }
 }
 
+/**
+ *  Skill menos perdida de meditacion
+ */
 const doubleMind = () => {
     if(progressMeditation.value >= 90) {
         doubleMindDesc.innerText = 'Less meditation stress'
@@ -152,6 +181,9 @@ const doubleMind = () => {
     }
 }
 
+/**
+ *  Skill arbol mas rapido
+ */
 const megaGrow = () => {
     if(progressMeditation.value >= 90) {
         megaGrowDesc.innerText = 'Increase tree speed'
@@ -160,6 +192,9 @@ const megaGrow = () => {
     }
 }
 
+/**
+ *  Skill bonificación de bananas
+ */
 const meditationPlus = () => {
     if(progressMeditation.value >= 90) {
         meditationPlusDesc.innerText = 'Banana bonification'
