@@ -1,5 +1,5 @@
 let bananas = 0;
-let bananasPC = 100;
+let bananasPC = 10;
 let bananasPS = 0;
 let meditationSpeed = 2;
 let meditationSubstract = 4000;
@@ -18,6 +18,12 @@ let doubleMindDesc = document.querySelector('#double-mind-desc')
 let megaGrowDesc = document.querySelector('#mega-grow-desc')
 let meditationPlusDesc = document.querySelector('#meditation-plus-desc')
 
+let progressBananas = document.querySelector('#progress-bananas');
+let progressMeditation = document.querySelector('#progress-meditation');
+let treeImg = document.querySelector('#tree')
+let apeImg = document.querySelector('#ape')
+let bananaIcon = document.querySelector('#banana')
+let eyeIcon = document.querySelector('#eye')
 
 /**
  *  Contador de bananas
@@ -37,13 +43,6 @@ function restartMeditation() {
         icon.style.opacity = '.2';
     });
 }   
-
-let progressBananas = document.querySelector('#progress-bananas');
-let progressMeditation = document.querySelector('#progress-meditation');
-let treeImg = document.querySelector('#tree')
-let apeImg = document.querySelector('#ape')
-let bananaIcon = document.querySelector('#banana')
-let eyeIcon = document.querySelector('#eye')
 
 let skillIcons = document.querySelectorAll('.skill-icon')
 skillIcons.forEach(icon => {
@@ -70,7 +69,7 @@ setInterval(() => {
     if (progressBananas.value == 100) {
         bananaIconTrigger();
     }
-}, 4000);
+}, 500);
 
 // Decrecimiento de la meditación
 setInterval(() => {
@@ -116,6 +115,7 @@ const updateMeditation = () => {
         });
     }
 }
+
 updateMeditation();
 
 /**
